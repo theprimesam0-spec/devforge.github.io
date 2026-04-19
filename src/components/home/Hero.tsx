@@ -137,8 +137,8 @@ export default function Hero() {
           }}
         >
           {[
-            { src: '/showcase-2.png', alt: 'DevForge fullstack development showcase' },
-            { src: '/showcase-3.png', alt: 'DevForge developer workspace showcase' },
+            { src: `${import.meta.env.BASE_URL}showcase-2.png`, alt: 'DevForge fullstack development showcase' },
+            { src: `${import.meta.env.BASE_URL}showcase-3.png`, alt: 'DevForge developer workspace showcase' },
           ].map((img) => (
             <div
               key={img.src}
