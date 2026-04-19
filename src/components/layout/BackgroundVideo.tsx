@@ -30,9 +30,8 @@ const BackgroundVideo = () => {
       if (isMoving) {
         videoRef.current.pause();
       } else {
-        videoRef.current.play().catch(error => {
+        videoRef.current.play().catch(() => {
           // Auto-play might be blocked by browser until user interaction
-          console.log("Autoplay blocked or interrupted:", error);
         });
       }
     }
