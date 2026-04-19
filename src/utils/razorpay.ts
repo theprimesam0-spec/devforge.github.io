@@ -85,6 +85,7 @@ export function initiatePayment(options: PaymentOptions): void {
       name: 'DevForge',
       description: `${name} - ${description}`,
       handler: function (response: Record<string, unknown>) {
+        console.log('Payment successful:', response);
         if (onSuccess) {
           onSuccess(response);
         }
@@ -99,6 +100,7 @@ export function initiatePayment(options: PaymentOptions): void {
       },
       modal: {
         ondismiss: function () {
+          console.log('Payment modal dismissed');
           // Ensure modal is properly closed
           setTimeout(() => {
             if (onFailure) {

@@ -18,8 +18,24 @@ export default function ServiceCard({ data, isAuthenticated }: ServiceCardProps)
   const userName = user?.fullName || [user?.firstName, user?.lastName].filter(Boolean).join(' ') || 'Unknown User';
   const userPhone = user?.primaryPhoneNumber?.phoneNumber || undefined;
 
-  const recordOrder = (status: 'completed' | 'failed' | 'cancelled', paymentId?: string) => {
-    // Analytics/Database recording can be added here
+  const recordOrder = async (status: 'completed' | 'failed' | 'cancelled', paymentId?: string) => {
+    try {
+      const order = {
+        serviceId: data.id,
+        serviceTitle: data.title,
+        userId,
+        userEmail,
+        userName,
+        userPhone,
+        paymentId,
+        status,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      };
+      console.log('Record order (stub):', order);
+    } catch (err) {
+      console.error('Failed to record order (stub):', err);
+    }
   };
 
   const handleCTA = () => {

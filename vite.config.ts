@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 
-export default defineConfig({
-  base: '/devforge.github.io/',
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/devforge.github.io/' : '/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
@@ -26,4 +26,4 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: true,
   },
-});
+}));
