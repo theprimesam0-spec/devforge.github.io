@@ -124,9 +124,7 @@ export default function Hero() {
             <span style={{ color: 'var(--text-muted)' }}>{'// '}</span>
             Showcase
           </h3>
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-muted)' }}>
-            Website visuals (not used as icon)
-          </div>
+
         </div>
 
         <div

@@ -85,13 +85,13 @@ export default function MenuBar() {
           fontWeight: 500,
         }}
       >
-        <a href="#services" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
+        <a href={`${import.meta.env.BASE_URL}#services`} style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
           Services
         </a>
-        <a href="#converter" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
+        <a href={`${import.meta.env.BASE_URL}#converter`} style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
           Converter
         </a>
-        <a href="#support" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
+        <a href={`${import.meta.env.BASE_URL}#support`} style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
           Support
         </a>
       </nav>
@@ -108,7 +108,7 @@ export default function MenuBar() {
           {formattedDate} {formattedTime}
         </span>
         {isSignedIn ? (
-          <UserButton afterSignOutUrl="/" />
+          <UserButton afterSignOutUrl={import.meta.env.BASE_URL} />
         ) : (
           <button
             onClick={() => navigate('/sign-in')}

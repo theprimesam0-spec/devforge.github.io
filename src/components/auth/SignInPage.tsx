@@ -245,9 +245,9 @@ export default function SignInPage() {
         {/* Clerk Sign-In Component */}
         <SignIn
           routing="path"
-          path="/sign-in"
-          signUpUrl="/sign-up"
-          forceRedirectUrl="/"
+          path={`${import.meta.env.BASE_URL}sign-in`}
+          signUpUrl={`${import.meta.env.BASE_URL}sign-up`}
+          forceRedirectUrl={import.meta.env.BASE_URL}
           appearance={{
             elements: {
               rootBox: {
